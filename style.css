@@ -3,6 +3,7 @@ body {
   align-items: center;
   justify-content: center;
   background: rgb(255, 230, 0);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 h1 {
