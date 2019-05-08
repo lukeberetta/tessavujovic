@@ -1,0 +1,23 @@
+{
+  "name": "tessavujovic",
+  "version": "1.0.0",
+  "description": "Website for Bubumara",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukeberetta/tessavujovic.git"
+  },
+  "keywords": [
+    "Bug"
+  ],
+  "author": "Luke Beretta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lukeberetta/tessavujovic/issues"
+  },
+  "homepage": "https://github.com/lukeberetta/tessavujovic#readme",
+  "dependencies": {}
+}
