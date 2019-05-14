@@ -1,7 +1,7 @@
 :root {
-  --color-primary: red;
+  --color-primary: rgba(255, 0, 0, 1);
   --color-secondary: rgba(0, 0, 255, 0.7);
-  --color-tertiary: #D6B100;
+  --color-tertiary: rgba(214, 178, 0, 1);
   --color-text: rgb(0, 0, 0, 0.7);
 }
 
@@ -16,6 +16,8 @@ body {
   width: 100vw;
   text-transform: uppercase;
   font-weight: bold;
+  margin: 0;
+  overflow-x: hidden;
 }
 
 section {
@@ -35,10 +37,12 @@ h2 {
 }
 
 p {
-  font-style: italic;
+  /* font-style: italic; */
+  font-size: 20px;
+  text-transform: none;
   color: rgb(48, 48, 48);
-  letter-spacing: 1px;
-  line-height: 20px;
+  letter-spacing: .5px;
+  line-height: 24px;
   color: var(--color-text);
 }
 
@@ -110,4 +114,5 @@ li:hover {
 
 .bio {
   margin-bottom: 30vh;
+  text-align: justify; 
 }
