@@ -19,9 +19,7 @@ body {
   overflow-x: hidden;
 }
 
-section {
-  /* width: 45%; */
-}
+section {}
 
 h1 {
   font-family: 'Archivo Black', sans-serif;
@@ -50,10 +48,8 @@ p {
 }
 
 span {
-  color: var(--color-tertiary);
+  color: var(--color-secondary);
   text-shadow: none;
-  /* text-shadow: -1px -1px 0 var(--color-tertiary), 1px -1px 0 var(--color-tertiary), -1px 1px 0 var(--color-tertiary), 1px 1px 0 var(--color-tertiary); */
-
 }
 
 ul {
@@ -109,7 +105,6 @@ li:hover {
   float: right;
   position: relative;
   width: 43%;
-  /* display: none; */
 }
 
 .name {
@@ -133,10 +128,14 @@ li:hover {
 .bio {
   margin-top: 70vh;
   margin-bottom: 60vh;
-  /* text-align: justify;  */
 }
 
 /* Experimental */
+
+#warp {
+  margin-left: -40px;
+  height: 50px;
+}
 
 .names-top {
   position: absolute;
