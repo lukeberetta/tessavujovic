@@ -1,189 +1,223 @@
 :root {
-  --color-primary: rgba(255, 0, 0, 1);
-  --color-secondary: rgba(0, 0, 255, 0.7);
-  --color-tertiary: rgba(214, 178, 0, 1);
-  --color-text: rgb(0, 0, 0, 0.7);
+	--color-primary: rgba(255, 0, 0, 1);
+	--color-secondary: rgba(0, 0, 255, 0.7);
+	--color-tertiary: rgba(214, 178, 0, 1);
+	--color-text: rgb(0, 0, 0, 0.7);
+	--color-body: #f6f5f1;
 }
 
 html {
-  background: #F6F5F1;
+	background: var(--color-body);
 }
 
 body {
-  font-family: 'Archivo', sans-serif;
-  color: var(--color-primary);
-  height: 100vh;
-  width: 100vw;
-  text-transform: uppercase;
-  margin: 0;
-  overflow-x: hidden;
+	font-family: 'Archivo', sans-serif;
+	color: var(--color-primary);
+	height: 100vh;
+	width: 100vw;
+	text-transform: uppercase;
+	margin: 0;
+	overflow-x: hidden;
 }
 
-section {}
-
 h1 {
-  font-family: 'Archivo Black', sans-serif;
-  font-size: 140px;
-  margin: 40px 0;
-  line-height: 127px;
+	font-family: 'Archivo Black', sans-serif;
+	font-size: 140px;
+	margin: 40px 0;
+	line-height: 127px;
 }
 
 h2 {
-  font-size: 50px;
-  margin: 0;
+	font-size: 50px;
+	margin: 0;
 }
 
 h3 {
-  font-size: 40px;
+	font-size: 40px;
 }
 
 p {
-  /* font-style: italic; */
-  font-size: 19px;
-  text-transform: none;
-  color: rgb(48, 48, 48);
-  letter-spacing: .5px;
-  line-height: 24px;
-  color: var(--color-text);
+	font-style: italic;
+	font-size: 19px;
+	text-transform: none;
+  letter-spacing: 0.5px;
+	line-height: 24px;
+	color: var(--color-primary);
 }
 
 span {
-  color: var(--color-secondary);
-  text-shadow: none;
+	color: var(--color-secondary);
+	text-shadow: none;
 }
 
 ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+	list-style: none;
+	padding: 0;
+	margin: 0;
 }
 
 a {
-  color: inherit; /* blue colors for links too */
+	color: inherit; /* blue colors for links too */
   text-decoration: inherit; /* no underline */
+  transition: all 0.5s;
 }
 
-li {
-  font-size: 25px;
-  transition: all .5s;
-  margin: 5px 0;
+li a {
+	font-size: 25px;
+	transition: all 0.3s;
+	margin: 5px 0;
 }
 
-li:hover {
-  transform: translateX(10px);
-  text-shadow: -1px -1px 0 var(--color-secondary), 1px -1px 0 var(--color-secondary), -1px 1px 0 var(--color-secondary), 1px 1px 0 var(--color-secondary);
+li a:hover {
+	transform: translateX(10px);
+	text-shadow: -1px -1px 0 var(--color-secondary),
+		1px -1px 0 var(--color-secondary), -1px 1px 0 var(--color-secondary),
+    1px 1px 0 var(--color-secondary);
+    text-shadow: none;
+    color: var(--color-primary);
+    letter-spacing: 4px;
 }
 
 .links {
-  z-index: 99;
-  position: relative;
+	z-index: 99;
+	position: relative;
 }
 
 .text-outline {
-  letter-spacing: 3px;
-  font-style: italic;
-  text-shadow: -1px -1px 0 var(--color-primary), 1px -1px 0 var(--color-primary), -1px 1px 0 var(--color-primary), 1px 1px 0 var(--color-primary);
-  color: #F6F5F1;
+	letter-spacing: 3px;
+	font-style: italic;
+	text-shadow: -1px -1px 0 var(--color-primary), 1px -1px 0 var(--color-primary),
+		-1px 1px 0 var(--color-primary), 1px 1px 0 var(--color-primary);
+	color: var(--color-body);
 }
 
 .bio .text-outline {
-  text-shadow: -1px -1px 0 var(--color-secondary), 1px -1px 0 var(--color-secondary), -1px 1px 0 var(--color-secondary), 1px 1px 0 var(--color-secondary);
-
+	text-shadow: -1px -1px 0 var(--color-secondary),
+		1px -1px 0 var(--color-secondary), -1px 1px 0 var(--color-secondary),
+		1px 1px 0 var(--color-secondary);
 }
 
 .container {
-  padding: 11% 11% 0;
-  max-width: 1177px;
-  margin: auto;
+	padding: 11% 11% 0;
+	max-width: 1177px;
+	margin: auto;
 }
 
 .left {
-  position: fixed;
+	position: fixed;
+	top: 50%;
+	transform: translateY(-50%);
+	height: 500px;
 }
 
 .right {
-  float: right;
-  position: relative;
-  width: 43%;
+	float: right;
+	position: relative;
+	width: 43%;
 }
 
 .name {
-  position: absolute;
+	position: absolute;
 }
 
 .img {
-  width: 98%;
-  height: 600px;
-  background: green;
-  margin-bottom: 70px;
-  margin-top: -40px;
-  z-index: -1;
-  position: inherit;
-  background-image: url('../img/tessie.png');
-  background-position: bottom;
-  background-size: cover;
-  box-shadow: 10px 10px 0px var(--color-tertiary);
+	width: 98%;
+	height: 600px;
+	background: green;
+	margin-bottom: 70px;
+	margin-top: -40px;
+	z-index: -1;
+	position: inherit;
+	background-image: url('../img/tessie.png');
+	background-position: bottom;
+	background-size: cover;
+	box-shadow: 10px 10px 0px var(--color-tertiary);
 }
 
 .bio {
-  margin-top: 70vh;
-  margin-bottom: 60vh;
+	margin-top: 70vh;
+	margin-bottom: 50vh;
+}
+
+#madeby {
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  font-size: 10px;
+  transform: rotate(-90deg) translateY(-50%);
+}
+
+#madeby:hover {
+  color: var(--color-body);
+  text-shadow: -1px -1px 0 var(--color-primary), 1px -1px 0 var(--color-primary),
+		-1px 1px 0 var(--color-primary), 1px 1px 0 var(--color-primary);
 }
 
 /* Experimental */
 
 #warp {
-  margin-left: -40px;
-  height: 50px;
+	margin-left: -40px;
+	height: 50px;
 }
 
 .names-top {
-  position: absolute;
-  top: -86%;
+	position: absolute;
+	top: -86%;
 }
 
 .names-bottom {
-  position: absolute;
-  bottom: -72%;
+	position: absolute;
+	bottom: -72%;
 }
 
 .name-fx {
-  opacity: .4;
-  margin: 0;
-  color: var(--color-tertiary);
+	opacity: 0.4;
+	margin: 0;
+	color: var(--color-tertiary);
 }
 
 .load-1 {
-  opacity: 0;
-  animation: fadeInOut 1.5s forwards 0.1s;
+	opacity: 0;
+	animation: fadeInOut 1.2s forwards 0.1s;
 }
 .load-2 {
-  opacity: 0;
-  animation: fadeInOut 1.5s forwards 0.2s;
+	opacity: 0;
+	animation: fadeInOut 1.2s forwards 0.25s;
 }
 .load-3 {
-  opacity: 0;
-  animation: fadeInOut 1.5s forwards 0.3s;
+	opacity: 0;
+	animation: fadeInOut 1.2s forwards 0.4s;
 }
 .load-4 {
-  opacity: 0;
-  animation: fadeIn 1.5s forwards 0.4s;
+	opacity: 0;
+	animation: fadeIn 1.2s forwards 0.55s;
 }
 
 .load-content {
-  opacity: 0;
-  animation: fadeIn 2.5s forwards 1s;
+	opacity: 0;
+	animation: fadeIn 1.5s forwards 1s;
 }
 
 @keyframes fadeInOut {
-  0% {opacity: 0;}
-  /* 25% {opacity: 1;} */
-  50% {opacity: 1;}
-  /* 75% {opacity: 1;} */
-  100% {opacity: 0;}
+	0% {
+		opacity: 0;
+	}
+	/* 25% {opacity: 1;} */
+	50% {
+		opacity: 1;
+	}
+	/* 75% {opacity: 1;} */
+	100% {
+		opacity: 0;
+	}
 }
 
 @keyframes fadeIn {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
