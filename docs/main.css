@@ -1,3 +1,9 @@
+:root {
+  --colour-light: #f5f1f6;
+  --colour-dark: #272727;
+}
+
+
 a,
 abbr,
 acronym,
@@ -136,8 +142,6 @@ body {
 .app-header,
 .app-main span {
   font-weight: 500;
-  /* letter-spacing: 1.5px; */
-  /* text-transform: uppercase; */
   font-size: 16px;
 }
 
@@ -152,26 +156,26 @@ a {
 .is-white,
 .is-white .app-intro h1,
 .is-white a {
-  color: #000
+  color: var(--colour-dark);
 }
 
 .is-white {
-  background: #fff
+  background: var(--colour-light);
 }
 
 .is-black,
 .is-white .app-aside ul li:before {
-  background: #000
+  background: var(--colour-dark);
 }
 
 .is-black,
 .is-black .app-intro h1,
 .is-black a {
-  color: #fff
+  color: var(--colour-light);
 }
 
 .is-black .app-aside ul li:before {
-  background: #fff
+  background: var(--colour-light);
 }
 
 .app-header {
