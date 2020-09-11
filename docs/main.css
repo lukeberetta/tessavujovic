@@ -1,8 +1,7 @@
 :root {
-  --colour-light: #f5f1f6;
-  --colour-dark: #272727;
+  --colour-light: #FFDCE1;
+  --colour-dark: #01332C;
 }
-
 
 a,
 abbr,
@@ -117,6 +116,15 @@ section {
   -webkit-tap-highlight-color: transparent
 }
 
+@font-face{
+  font-family: 'Ogg';
+  src: url(assets/fonts/Ogg-Regular.ttf);
+}
+@font-face{
+  font-family: 'Ogg-italic';
+  src: url(assets/fonts/Ogg-LightItalic.ttf);
+}
+
 .app-aside,
 .app-header {
   z-index: 99;
@@ -127,22 +135,21 @@ section {
 
 body {
   line-height: 1;
-  font-weight: 400;
+  font-weight: 300;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: 'DM Sans', Arial, Helvetica, sans-serif;
-
+  font-family: 'HKGrotesk-Medium', Arial, Helvetica, sans-serif;
 }
 
 .app-aside ul li,
 .app-header,
-.app-main span {
-  font-weight: 500;
-  font-size: 16px;
+.app-main span, h2, h1 {
+  font-size: 14px;
+  font-family: 'Ogg';
 }
 
 a {
@@ -187,9 +194,9 @@ a {
 
 @media only screen and (max-width: 451px) {
   .app-header {
-    top: 130px;
+    top: 160px;
     left: auto;
-    right: 35px;
+    right: 28px;
     transform: rotate(90deg);
     transform-origin: top right
   }
@@ -233,7 +240,7 @@ a {
 @media only screen and (max-width: 451px) {
   .app-aside {
     left: auto;
-    right: 35px;
+    right: 28px;
     bottom: 30px;
     transform: rotate(90deg);
     transform-origin: top right
@@ -268,7 +275,7 @@ a {
 
 @media only screen and (max-width: 451px) {
   .app-main {
-    padding: 60px 60px 60px 30px
+    padding: 60px 68px 60px 24px
   }
 }
 
@@ -308,10 +315,9 @@ a {
 }
 
 .app-main h2 {
-  font-weight: 500;
-  font-size: 60px;
-  max-width: 960px;
-  line-height: 125%
+  font-size: 125px;
+  max-width: 1060px;
+  line-height: 90%
 }
 
 @media only screen and (max-width: 451px) {
@@ -322,11 +328,11 @@ a {
 
 .app-main li,
 .app-main p {
-  opacity: .6;
+  opacity: .7;
   font-size: 18px;
-  max-width: 420px;
+  max-width: 450px;
   list-style: none;
-  line-height: 150%;
+  line-height: 124%;
   padding-bottom: 20px
 }
 
