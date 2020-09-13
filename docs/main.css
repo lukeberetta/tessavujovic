@@ -196,21 +196,20 @@ a {
 
 .app-header {
   top: 150px;
-  left: 65px;
-  transform: rotate(-90deg);
+  left: 60px;
   transform-origin: bottom left
 }
 
 .app-header {
   top: 80px;
   left: auto;
-  right: 110px;
+  right: 90px;
   transform-origin: top right
 }
 
 @media only screen and (max-width: 451px) {
   .app-header {
-    right: 45px;
+    right: 20px;
     top: 20px;
   }
   .hero-image {
