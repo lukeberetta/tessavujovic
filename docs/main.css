@@ -120,9 +120,15 @@ section {
   font-family: 'Ogg';
   src: url(assets/fonts/Ogg-Regular.ttf);
 }
+
 @font-face{
   font-family: 'Ogg-italic';
   src: url(assets/fonts/Ogg-LightItalic.ttf);
+}
+
+@font-face{
+  font-family: 'Helvetica-Neue';
+  src: url(assets/fonts/HelveticaNeue.ttc);
 }
 
 .app-aside,
@@ -142,13 +148,16 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: 'HKGrotesk-Medium', Arial, Helvetica, sans-serif;
+  font-family: 'Helvetica-Neue', Arial, Helvetica, sans-serif;
+}
+
+i {
+  font-family: 'Ogg-italic';
 }
 
 .app-aside ul li,
 .app-header,
-.app-main span, h2, h1 {
-  font-size: 14px;
+ h2, h1 {
   font-family: 'Ogg';
 }
 
@@ -192,13 +201,20 @@ a {
   transform-origin: bottom left
 }
 
+.app-header {
+  top: 80px;
+  left: auto;
+  right: 110px;
+  transform-origin: top right
+}
+
 @media only screen and (max-width: 451px) {
   .app-header {
-    top: 160px;
-    left: auto;
-    right: 28px;
-    transform: rotate(90deg);
-    transform-origin: top right
+    right: 45px;
+    top: 20px;
+  }
+  .hero-image {
+    display: none !important;
   }
 }
 
@@ -322,15 +338,14 @@ a {
 
 @media only screen and (max-width: 451px) {
   .app-main h2 {
-    font-size: 35px
+    font-size: 50px
   }
 }
 
 .app-main li,
 .app-main p {
-  opacity: .7;
-  font-size: 18px;
-  max-width: 450px;
+  font-size: 20px;
+  max-width: 500px;
   list-style: none;
   line-height: 124%;
   padding-bottom: 20px
@@ -347,9 +362,25 @@ a {
   padding-bottom: 0
 }
 
-.highlight {
-  opacity: 1 !important;
+a:hover {
   text-decoration: underline;
+}
+
+.contact-list li {
+  font-size: 32px;
+  font-family: 'Ogg';
+}
+
+.hero-image {
+  width: 100%;
+  left: 0;
+  height: 700px;
+  margin-bottom: 120px;
+  padding: 0;
+  background-image: url(./assets/london-flat.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 /* Animation */
