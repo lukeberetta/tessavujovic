@@ -382,6 +382,10 @@ a:hover {
   background-size: cover;
 }
 
+.seo {
+  color: var(--colour-light);
+}
+
 /* Animation */
 
 .fadein-1 {
