@@ -1,32 +1,30 @@
-
 function appScroller() {
-	function e() {
-		if (n == window.pageYOffset)
-			return o(e),
-				!1;
-		var a = "translate3d(0px, -" + (n = window.pageYOffset) + "px, 0px)"
-			, i = $(".app-main")[0];
-		i.style.webkitTransform = a,
-			i.style.mozTransform = a,
-			i.style.transform = a,
-			o(e)
-	}
-	var n = -100;
-	$(document).ready(function () {
-		$("body").height($(".app-main").outerHeight()),
-			$(window).resize(function () {
-				$("body").height($(".app-main").outerHeight())
-			})
-	});
-	var o = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.msRequestAnimationFrame || window.oRequestAnimationFrame || function (e) {
-		window.setTimeout(e, 1e3 / 60)
-	};
-	e()
+  const main = document.querySelector('.app-main');
+  let lastY = -100;
+
+  function setBodyHeight() {
+    document.body.style.height = main.offsetHeight + 'px';
+  }
+
+  function tick() {
+    if (lastY !== window.pageYOffset) {
+      lastY = window.pageYOffset;
+      const transform = `translate3d(0px, -${lastY}px, 0px)`;
+      main.style.transform = transform;
+    }
+    requestAnimationFrame(tick);
+  }
+
+  setBodyHeight();
+  window.addEventListener('resize', setBodyHeight);
+  tick();
 }
 
-var $ = jQuery.noConflict();
-
-$(window).on("load", function () {
-	$("body").removeClass("is-loading"),
-		/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? $("body").addClass("is-mobile") : appScroller()
+window.addEventListener('load', function () {
+  document.body.classList.remove('is-loading');
+  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    document.body.classList.add('is-mobile');
+  } else {
+    appScroller();
+  }
 });
