@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tessa's World</title>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="world.css" />
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon" />
+  </head>
+  <body class="is-white world-page">
+
+    <div class="world-header">
+      <a href="index.html" class="world-back">← Back</a>
+      <span class="world-title">Tessa's World</span>
+      <span class="world-hint">Click items to explore</span>
+    </div>
+
+    <div class="world-wrap">
+      <div class="floor-plan" id="floorPlan">
+
+        <!-- LIVING ROOM -->
+        <div class="room room--living">
+          <span class="room-label">Living Room</span>
+          <div class="furniture tv-unit"></div>
+          <div class="furniture sofa"></div>
+          <div class="furniture coffee-table"></div>
+          <div class="furniture living-plant"></div>
+          <div class="item" data-key="guitar" style="top: 52px; right: 22px;">
+            <div class="item-icon">🎸</div>
+            <div class="item-label">Guitar</div>
+          </div>
+          <div class="item" data-key="map" style="top: 130px; left: 14px;">
+            <div class="item-icon">🗺</div>
+            <div class="item-label">Map</div>
+          </div>
+        </div>
+
+        <!-- KITCHEN -->
+        <div class="room room--kitchen">
+          <span class="room-label">Kitchen</span>
+          <div class="furniture counter-h"></div>
+          <div class="furniture counter-v"></div>
+          <div class="furniture kitchen-plant"></div>
+          <div class="item" data-key="stove" style="top: 8px; right: 72px;">
+            <div class="item-icon">🍳</div>
+            <div class="item-label">Stove</div>
+          </div>
+        </div>
+
+        <!-- BEDROOM -->
+        <div class="room room--bedroom">
+          <span class="room-label">Bedroom</span>
+          <div class="furniture bed"></div>
+          <div class="furniture bedside"></div>
+          <div class="furniture wardrobe"></div>
+          <div class="item" data-key="book" style="top: 82px; left: 8px;">
+            <div class="item-icon">📖</div>
+            <div class="item-label">Book</div>
+          </div>
+          <div class="item" data-key="artwork" style="top: 6px; left: 130px;">
+            <div class="item-icon">🖼</div>
+            <div class="item-label">Artwork</div>
+          </div>
+        </div>
+
+        <!-- STUDY & DINING -->
+        <div class="room room--study">
+          <span class="room-label">Study & Dining</span>
+          <div class="furniture study-desk"></div>
+          <div class="furniture dining-table"></div>
+          <div class="furniture dining-chair dining-chair--top"></div>
+          <div class="furniture dining-chair dining-chair--bottom"></div>
+          <div class="item" data-key="laptop" style="top: 16px; left: 4px;">
+            <div class="item-icon">💻</div>
+            <div class="item-label">Laptop</div>
+          </div>
+          <div class="item" data-key="sewing" style="bottom: 24px; right: 20px;">
+            <div class="item-icon">🧵</div>
+            <div class="item-label">Sewing Machine</div>
+          </div>
+        </div>
+
+        <!-- CHARACTER -->
+        <div class="character" id="character">
+          <svg viewBox="0 0 40 58" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="20" cy="54" rx="11" ry="3.5" fill="rgba(0,0,0,0.12)"/>
+            <path d="M13 36 Q12 50 20 50 Q28 50 27 36 L25 31 L15 31 Z" fill="#c4705a"/>
+            <rect x="17" y="29" width="6" height="4" rx="2" fill="#d4956a"/>
+            <circle cx="20" cy="21" r="13" fill="#d4956a"/>
+            <path d="M7.5 19 Q7 7 20 7 Q33 7 32.5 19 Q30 10 20 10 Q10 10 7.5 19Z" fill="#2a1a0e"/>
+            <path d="M8 18 Q7 25 9.5 27" stroke="#2a1a0e" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <path d="M32 18 Q33 25 30.5 27" stroke="#2a1a0e" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <circle cx="16" cy="22" r="1.5" fill="#2a1a0e"/>
+            <circle cx="24" cy="22" r="1.5" fill="#2a1a0e"/>
+            <path d="M17 26.5 Q20 28.5 23 26.5" stroke="#2a1a0e" stroke-width="1" fill="none" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- INFO CARD -->
+    <div class="info-card" id="infoCard">
+      <button class="info-card__close" id="infoClose">×</button>
+      <div class="info-card__icon" id="infoIcon"></div>
+      <h3 class="info-card__title" id="infoTitle"></h3>
+      <p class="info-card__text" id="infoText"></p>
+    </div>
+
+    <script src="world.js"></script>
+  </body>
+</html>
