@@ -123,10 +123,10 @@ function typewriterIntro() {
 
 window.addEventListener('load', function () {
   document.body.classList.remove('is-loading');
-  typewriterIntro();
   if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
     document.body.classList.add('is-mobile');
   } else {
     appScroller();
   }
+  typewriterIntro();
 });
