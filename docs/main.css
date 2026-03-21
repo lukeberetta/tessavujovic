@@ -408,3 +408,19 @@ a:hover {
     opacity: 1;
   }
 }
+
+.app-main h2.is-typing::after {
+  content: '';
+  display: inline-block;
+  width: 1px;
+  height: 0.72em;
+  background: currentColor;
+  margin-left: 3px;
+  vertical-align: baseline;
+  animation: cursor-blink 0.7s step-end infinite;
+}
+
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}

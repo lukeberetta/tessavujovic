@@ -26,6 +26,7 @@ function typewriterIntro() {
 
   // Token types: text, br, italic, backspace, pause
   const tokens = [
+    { type: 'pause', duration: 2000 },
     { type: 'text', content: 'Hi' },
     { type: 'pause', duration: 320 },
     { type: 'backspace' },
@@ -59,6 +60,7 @@ function typewriterIntro() {
   }
 
   h2.innerHTML = '';
+  h2.classList.add('is-typing');
 
   let stepIndex = 0;
   let currentTextNode = null;
@@ -75,6 +77,7 @@ function typewriterIntro() {
 
   function typeNext() {
     if (stepIndex >= steps.length) {
+      h2.classList.remove('is-typing');
       revealPage();
       return;
     }
@@ -118,7 +121,7 @@ function typewriterIntro() {
     setTimeout(typeNext, delay);
   }
 
-  setTimeout(typeNext, 400);
+  setTimeout(typeNext, 100);
 }
 
 window.addEventListener('load', function () {
