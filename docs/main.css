@@ -270,7 +270,7 @@ a {
 
 .app-main {
   position: fixed;
-  padding: 160px 120px;
+  padding: 120px;
   transition: all 0.5s cubic-bezier(0.2, 0.84, 0.5, 1);
   transform-origin: 0 0;
   transform: translate3d(0, 0, 0);
@@ -296,6 +296,10 @@ a {
   display: block;
   position: relative;
   padding-bottom: 120px;
+}
+
+.app-main .main-intro {
+  min-height: calc(100vh - 200px);
 }
 
 @media only screen and (max-width: 451px) {
@@ -326,7 +330,7 @@ a {
 }
 
 .app-main h2 {
-  font-size: 125px;
+  font-size: 110px;
   max-width: 1060px;
   line-height: 90%;
 }
@@ -402,6 +406,80 @@ a:hover {
   opacity: 0.5;
 }
 
+/* Projects grid */
+
+.main-section.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+.projects-heading {
+  grid-column: 1 / -1;
+  font-size: 13px !important;
+  max-width: none !important;
+  padding-bottom: 8px !important;
+  opacity: 0.45;
+  letter-spacing: 0.04em;
+}
+
+@media only screen and (max-width: 451px) {
+  .main-section.projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  color: inherit;
+}
+
+.project-card:hover {
+  text-decoration: none;
+}
+
+.project-thumb {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 12px;
+  margin-bottom: 14px;
+  background-color: rgba(25, 20, 17, 0.08);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: opacity 0.2s ease;
+}
+
+.is-black .project-thumb {
+  background-color: rgba(251, 252, 255, 0.1);
+}
+
+.project-card:hover .project-thumb {
+  opacity: 0.7;
+}
+
+.projects-grid .project-title {
+  font-family: "Ogg";
+  font-size: 16px;
+  max-width: none;
+  padding-bottom: 6px;
+  line-height: 1.2;
+}
+
+.project-card:hover .project-title {
+  text-decoration: underline;
+}
+
+.projects-grid .project-desc {
+  font-size: 13px;
+  max-width: none;
+  padding-bottom: 0;
+  line-height: 140%;
+  opacity: 0.55;
+}
+
 /* Animation */
 
 .fadein-1 {
@@ -414,7 +492,7 @@ a:hover {
 }
 
 .fadein-2.is-visible {
-  animation: 0.8s fadein-2 0.1s forwards;
+  animation: 2s fadein-2 0.1s forwards;
 }
 
 @keyframes fadein-1 {
