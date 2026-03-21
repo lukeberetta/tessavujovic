@@ -27,8 +27,12 @@ function typewriterIntro() {
   // Token types: text, br, italic, backspace, pause
   const tokens = [
     { type: 'pause', duration: 2000 },
-    { type: 'text', content: 'Hi' },
+    { type: 'text', content: 'Zdravo', speed: 140 },
     { type: 'pause', duration: 320 },
+    { type: 'backspace' },
+    { type: 'backspace' },
+    { type: 'backspace' },
+    { type: 'backspace' },
     { type: 'backspace' },
     { type: 'backspace' },
     { type: 'pause', duration: 180 },
@@ -50,7 +54,7 @@ function typewriterIntro() {
   for (const token of tokens) {
     if (token.type === 'text') {
       for (const char of token.content) {
-        steps.push({ type: 'char', char });
+        steps.push({ type: 'char', char, speed: token.speed });
       }
     } else if (token.type === 'italic') {
       steps.push({ type: 'italic', char: token.content });
@@ -83,7 +87,7 @@ function typewriterIntro() {
     }
 
     const step = steps[stepIndex++];
-    let delay = jitter();
+    let delay = step.speed != null ? step.speed + Math.floor(Math.random() * 30) : jitter();
 
     if (step.type === 'char') {
       if (currentTextNode === null) {
