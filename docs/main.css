@@ -203,6 +203,13 @@ a {
   transform-origin: top right;
 }
 
+@media only screen and (max-width: 900px) {
+  .app-header {
+    right: 60px;
+    top: 60px;
+  }
+}
+
 @media only screen and (max-width: 451px) {
   .app-header {
     right: 20px;
@@ -285,9 +292,21 @@ a {
   width: 100%;
 }
 
+@media only screen and (max-width: 900px) {
+  .app-main {
+    padding: 80px;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .app-main {
+    padding: 48px 32px 48px 32px;
+  }
+}
+
 @media only screen and (max-width: 451px) {
   .app-main {
-    padding: 60px 68px 60px 24px;
+    padding: 60px 48px 60px 24px;
   }
 }
 
@@ -300,6 +319,18 @@ a {
 
 .app-main .main-intro {
   min-height: calc(100vh - 200px);
+}
+
+@media only screen and (max-width: 900px) {
+  .app-main .main-intro {
+    min-height: calc(100vh - 240px);
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .app-main .main-intro {
+    min-height: auto;
+  }
 }
 
 @media only screen and (max-width: 451px) {
@@ -333,6 +364,18 @@ a {
   font-size: 110px;
   max-width: 1060px;
   line-height: 90%;
+}
+
+@media only screen and (max-width: 900px) {
+  .app-main h2 {
+    font-size: 80px;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .app-main h2 {
+    font-size: 56px;
+  }
 }
 
 @media only screen and (max-width: 451px) {
@@ -424,10 +467,17 @@ a:hover {
   text-transform: uppercase;
 }
 
+@media only screen and (max-width: 680px) {
+  .main-section.projects-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
 @media only screen and (max-width: 451px) {
   .main-section.projects-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
 }
 
