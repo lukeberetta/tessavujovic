@@ -124,6 +124,21 @@ function typewriterIntro() {
   setTimeout(typeNext, 100);
 }
 
+function themeToggle() {
+  const button = document.querySelector('.theme-toggle');
+  const body = document.body;
+
+  button.addEventListener('click', function () {
+    if (body.classList.contains('is-white')) {
+      body.classList.replace('is-white', 'is-black');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      body.classList.replace('is-black', 'is-white');
+      localStorage.setItem('theme', 'light');
+    }
+  });
+}
+
 window.addEventListener('load', function () {
   document.body.classList.remove('is-loading');
   if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
@@ -131,5 +146,6 @@ window.addEventListener('load', function () {
   } else {
     appScroller();
   }
+  themeToggle();
   typewriterIntro();
 });
