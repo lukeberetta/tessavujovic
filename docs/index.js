@@ -143,6 +143,42 @@ function themeToggle() {
   });
 }
 
+function goodreadsSlideshow() {
+  const thumb = document.querySelector('.goodreads-thumb');
+  if (!thumb) return;
+
+  const cycle = thumb.querySelector('.goodreads-cycle');
+  const images = [
+    "./assets/Tessa Vujovic - Goodreads 2.jpg",
+    "./assets/Tessa Vujovic - Goodreads 3.jpg",
+    "./assets/Tessa Vujovic - Goodreads 4.jpg",
+    "./assets/Tessa Vujovic - Goodreads 5.jpg",
+    "./assets/Tessa Vujovic - Goodreads 1.jpg",
+  ];
+
+  let timer = null;
+  let index = 0;
+
+  thumb.addEventListener('mouseenter', function () {
+    index = 0;
+    cycle.style.transition = 'none';
+    cycle.style.backgroundImage = `url('${images[index]}')`;
+    cycle.style.opacity = '1';
+
+    timer = setInterval(function () {
+      index = (index + 1) % images.length;
+      cycle.style.backgroundImage = `url('${images[index]}')`;
+    }, 2000);
+  });
+
+  thumb.addEventListener('mouseleave', function () {
+    clearInterval(timer);
+    timer = null;
+    cycle.style.transition = 'none';
+    cycle.style.opacity = '0';
+  });
+}
+
 window.addEventListener('load', function () {
   document.body.classList.remove('is-loading');
   if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
@@ -152,4 +188,5 @@ window.addEventListener('load', function () {
   }
   themeToggle();
   typewriterIntro();
+  goodreadsSlideshow();
 });

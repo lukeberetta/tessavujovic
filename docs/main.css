@@ -524,6 +524,34 @@ a:hover {
   opacity: 0.7;
 }
 
+.goodreads-thumb {
+  position: relative;
+  background-color: transparent;
+  clip-path: inset(0 round 12px);
+  border-radius: 0;
+}
+
+.project-card:hover .goodreads-thumb {
+  opacity: 1;
+}
+
+.goodreads-base,
+.goodreads-cycle {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.goodreads-base {
+  background-image: url('./assets/Tessa Vujovic - Goodreads 1.jpg');
+}
+
+.goodreads-cycle {
+  opacity: 0;
+}
+
 .projects-grid .project-title {
   font-family: "Ogg";
   font-size: 28px;
