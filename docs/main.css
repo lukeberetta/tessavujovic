@@ -471,9 +471,10 @@ a:hover {
 
 .projects-heading {
   grid-column: 1 / -1;
-  font-size: 10px !important;
+  font-size: 11px !important;
   max-width: none !important;
   padding-bottom: 16px !important;
+  margin-bottom: -60px;
   opacity: 0.45;
   letter-spacing: 0.12em;
   text-transform: uppercase;
