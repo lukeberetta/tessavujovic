@@ -219,6 +219,43 @@ function makereigSlideshow() {
   });
 }
 
+function dribbbleSlideshow() {
+  const thumb = document.querySelector('.dribbble-thumb');
+  if (!thumb) return;
+
+  const cycle = thumb.querySelector('.dribbble-cycle');
+  const images = [
+    "./assets/Chanel Mobile App by Tessa Vujovic 1.jpg",
+    "./assets/Monocle Homepage by Tessa Vujovic 2.jpg",
+    "./assets/Kelly Weastler Homepage by Tessa Vujovic 3.jpg",
+    "./assets/Insurance App by Tessa Vujovic 4.jpg",
+  ];
+
+  images.forEach(function (src) { var img = new Image(); img.src = src; });
+
+  let timer = null;
+  let index = 0;
+
+  thumb.addEventListener('mouseenter', function () {
+    index = 0;
+    cycle.style.transition = 'none';
+    cycle.style.backgroundImage = `url('${images[index]}')`;
+    cycle.style.opacity = '1';
+
+    timer = setInterval(function () {
+      index = (index + 1) % images.length;
+      cycle.style.backgroundImage = `url('${images[index]}')`;
+    }, 2000);
+  });
+
+  thumb.addEventListener('mouseleave', function () {
+    clearInterval(timer);
+    timer = null;
+    cycle.style.transition = 'none';
+    cycle.style.opacity = '0';
+  });
+}
+
 window.addEventListener('load', function () {
   document.body.classList.remove('is-loading');
   if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
@@ -230,4 +267,5 @@ window.addEventListener('load', function () {
   typewriterIntro();
   goodreadsSlideshow();
   makereigSlideshow();
+  dribbbleSlideshow();
 });

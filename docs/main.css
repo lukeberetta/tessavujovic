@@ -580,6 +580,34 @@ a:hover {
   opacity: 0;
 }
 
+.dribbble-thumb {
+  position: relative;
+  background-color: transparent;
+  clip-path: inset(0 round 12px);
+  border-radius: 0;
+}
+
+.project-card:hover .dribbble-thumb {
+  opacity: 1;
+}
+
+.dribbble-base,
+.dribbble-cycle {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.dribbble-base {
+  background-image: url('./assets/SUPERGA.jpg');
+}
+
+.dribbble-cycle {
+  opacity: 0;
+}
+
 .projects-grid .project-title {
   font-family: "Ogg";
   font-size: 28px;
