@@ -165,6 +165,21 @@ h1 {
 
 a {
   text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-repeat: no-repeat;
+  background-position: 0 calc(1em + 5px);
+  transition: background-size 1.5s ease;
+}
+
+a:hover {
+  background-size: 100% 1px;
+}
+
+.project-card,
+.project-card:hover {
+  background-image: none;
+  transition: none;
 }
 
 .is-loading {
@@ -404,9 +419,6 @@ a {
   padding-bottom: 0;
 }
 
-a:hover {
-  text-decoration: underline;
-}
 
 .contact-list li {
   font-size: 32px;
@@ -519,9 +531,6 @@ a:hover {
   line-height: 1.2;
 }
 
-.project-card:hover .project-title {
-  text-decoration: underline;
-}
 
 .projects-grid .project-desc {
   font-size: 14px;
