@@ -156,6 +156,46 @@ function goodreadsSlideshow() {
     "./assets/Tessa Vujovic - Goodreads 1.jpg",
   ];
 
+  images.forEach(function (src) { var img = new Image(); img.src = src; });
+
+  let timer = null;
+  let index = 0;
+
+  thumb.addEventListener('mouseenter', function () {
+    index = 0;
+    cycle.style.transition = 'none';
+    cycle.style.backgroundImage = `url('${images[index]}')`;
+    cycle.style.opacity = '1';
+
+    timer = setInterval(function () {
+      index = (index + 1) % images.length;
+      cycle.style.backgroundImage = `url('${images[index]}')`;
+    }, 2000);
+  });
+
+  thumb.addEventListener('mouseleave', function () {
+    clearInterval(timer);
+    timer = null;
+    cycle.style.transition = 'none';
+    cycle.style.opacity = '0';
+  });
+}
+
+function makereigSlideshow() {
+  const thumb = document.querySelector('.makereign-thumb');
+  if (!thumb) return;
+
+  const cycle = thumb.querySelector('.makereign-cycle');
+  const images = [
+    "./assets/makereign - 01.png",
+    "./assets/finchoice - 02.png",
+    "./assets/anyvan - 03.png",
+    "./assets/mweb - 04.png",
+    "./assets/go121 - 05.png",
+  ];
+
+  images.forEach(function (src) { var img = new Image(); img.src = src; });
+
   let timer = null;
   let index = 0;
 
@@ -189,4 +229,5 @@ window.addEventListener('load', function () {
   themeToggle();
   typewriterIntro();
   goodreadsSlideshow();
+  makereigSlideshow();
 });
