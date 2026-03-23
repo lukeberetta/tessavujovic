@@ -176,6 +176,10 @@ a:hover {
   background-size: 100% 1px;
 }
 
+.app-main p a {
+  font-family: "Ogg-italic";
+}
+
 .project-card,
 .project-card:hover {
   background-image: none;
