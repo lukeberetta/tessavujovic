@@ -185,37 +185,47 @@ function makereigSlideshow() {
   const thumb = document.querySelector('.makereign-thumb');
   if (!thumb) return;
 
-  const cycle = thumb.querySelector('.makereign-cycle');
   const images = [
-    "./assets/makereign - 01.png",
-    "./assets/finchoice - 02.png",
-    "./assets/anyvan - 03.png",
-    "./assets/mweb - 04.png",
-    "./assets/go121 - 05.png",
+    "./assets/makereign - 01.jpg",
+    "./assets/finchoice - 02.jpg",
+    "./assets/cape union mart - 03.jpg",
+    "./assets/anyvan - 04.jpg",
+    "./assets/go121 - 05.jpg",
   ];
 
-  images.forEach(function (src) { var img = new Image(); img.src = src; });
+  // Create one pre-loaded layer per image — no backgroundImage swapping mid-cycle
+  const layers = images.map(function (src) {
+    const div = document.createElement('div');
+    div.style.cssText = 'position:absolute;inset:0;background-size:cover;background-position:center;background-repeat:no-repeat;opacity:0;';
+    div.style.backgroundImage = `url('${src}')`;
+    thumb.appendChild(div);
+    return div;
+  });
+
+  // Layer 0 is the resting state
+  layers[0].style.opacity = '1';
 
   let timer = null;
   let index = 0;
 
   thumb.addEventListener('mouseenter', function () {
-    index = 0;
-    cycle.style.transition = 'none';
-    cycle.style.backgroundImage = `url('${images[index]}')`;
-    cycle.style.opacity = '1';
+    layers[index].style.opacity = '0';
+    index = 1;
+    layers[index].style.opacity = '1';
 
     timer = setInterval(function () {
+      layers[index].style.opacity = '0';
       index = (index + 1) % images.length;
-      cycle.style.backgroundImage = `url('${images[index]}')`;
+      layers[index].style.opacity = '1';
     }, 2000);
   });
 
   thumb.addEventListener('mouseleave', function () {
     clearInterval(timer);
     timer = null;
-    cycle.style.transition = 'none';
-    cycle.style.opacity = '0';
+    layers[index].style.opacity = '0';
+    index = 0;
+    layers[0].style.opacity = '1';
   });
 }
 
