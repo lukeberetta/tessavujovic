@@ -528,6 +528,34 @@ a:hover {
   opacity: 0.7;
 }
 
+.kobo-thumb {
+  position: relative;
+  background-color: transparent;
+  clip-path: inset(0 round 12px);
+  border-radius: 0;
+}
+
+.project-card:hover .kobo-thumb {
+  opacity: 1;
+}
+
+.kobo-base,
+.kobo-cycle {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.kobo-base {
+  background-image: url('./assets/Kobotoolbox 01.jpg');
+}
+
+.kobo-cycle {
+  opacity: 0;
+}
+
 .goodreads-thumb {
   position: relative;
   background-color: transparent;

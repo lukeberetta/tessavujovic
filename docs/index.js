@@ -229,6 +229,51 @@ function makereigSlideshow() {
   });
 }
 
+function koboSlideshow() {
+  const thumb = document.querySelector('.kobo-thumb');
+  if (!thumb) return;
+
+  const images = [
+    "./assets/Kobotoolbox 01.jpg",
+    "./assets/Kobotoolbox 02.jpg",
+    "./assets/Kobotoolbox 04.jpg",
+    "./assets/Kobotoolbox 04-1.jpg",
+  ];
+
+  const layers = images.map(function (src) {
+    const div = document.createElement('div');
+    div.style.cssText = 'position:absolute;inset:0;background-size:cover;background-position:center;background-repeat:no-repeat;opacity:0;';
+    div.style.backgroundImage = `url('${src}')`;
+    thumb.appendChild(div);
+    return div;
+  });
+
+  layers[0].style.opacity = '1';
+
+  let timer = null;
+  let index = 0;
+
+  thumb.addEventListener('mouseenter', function () {
+    layers[index].style.opacity = '0';
+    index = 1;
+    layers[index].style.opacity = '1';
+
+    timer = setInterval(function () {
+      layers[index].style.opacity = '0';
+      index = (index + 1) % images.length;
+      layers[index].style.opacity = '1';
+    }, 2000);
+  });
+
+  thumb.addEventListener('mouseleave', function () {
+    clearInterval(timer);
+    timer = null;
+    layers[index].style.opacity = '0';
+    index = 0;
+    layers[0].style.opacity = '1';
+  });
+}
+
 function dribbbleSlideshow() {
   const thumb = document.querySelector('.dribbble-thumb');
   if (!thumb) return;
@@ -275,6 +320,7 @@ window.addEventListener('load', function () {
   }
   themeToggle();
   typewriterIntro();
+  koboSlideshow();
   goodreadsSlideshow();
   makereigSlideshow();
   dribbbleSlideshow();
