@@ -1,23 +1,15 @@
 {
   "name": "tessavujovic",
   "version": "1.0.0",
-  "description": "Website for Bubumara",
-  "main": "index.js",
+  "description": "Tessa Vujovic \u2014 Product Designer portfolio",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node dev.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lukeberetta/tessavujovic.git"
   },
-  "keywords": [
-    "Bug"
-  ],
   "author": "Luke Beretta",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/lukeberetta/tessavujovic/issues"
-  },
-  "homepage": "https://github.com/lukeberetta/tessavujovic#readme",
-  "dependencies": {}
+  "private": true
 }
