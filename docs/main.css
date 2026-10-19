@@ -48,7 +48,7 @@ ul {
   align-content: center;
   gap: var(--space-content);
   min-height: 100svh;
-  padding: 24px 120px;
+  padding: 24px clamp(24px, calc(16vw - 72px), 120px);
 }
 
 .app-main > * {
@@ -91,12 +91,6 @@ a:hover {
 a:focus-visible {
   outline: 2px solid currentColor;
   outline-offset: 4px;
-}
-
-@media (max-width: 451px) {
-  .app-main {
-    padding: 24px 68px 24px 24px;
-  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
